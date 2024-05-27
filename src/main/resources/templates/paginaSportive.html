@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/moto.css" type="text/css" />
+
+
+
+    <title>Sportive</title>
+</head>
+<body>
+    <div id="page-wrapper">
+
+        <nav id="nav">
+					
+            <ul style="display: flex; align-items: center; justify-content: center; top: -2px;">
+                <li><a href="/home">Home</a></li>
+                
+                <li class="current">
+                    <a type="button" data-bs-toggle="dropdown" aria-expanded="false" >Motoroni</a>
+                </li>
+
+                <li>
+                    <a href="/caschi">Caschi</a>
+                </li>
+
+                <li>
+                    <a href="/abbigliamento">Abbigliamento</a>
+                </li>
+
+                <li>
+                    <a type="button" data-bs-toggle="dropdown" aria-expanded="false" ><img src="https://cdn-icons-png.flaticon.com/512/5029/5029739.png" class="iconlogin"></a>
+                    <ul class="dropdown-menu">
+                        <li th:unless="${loggato}"><a href="/login" style="background-color: transparent; color: #6b7770;">Login</a></li>
+                        <li th:unless="${loggato}"><a href="/formRegistrazione" style="background-color: transparent; color: #6b7770;">Registrazione</a></li>
+                        <li th:if="${isAdmin}"><a href="/admin" style="background-color: transparent; color: #6b7770;">Admin-Page</a></li>
+                        <li th:if="${loggato}"><a href="/logout" style="background-color: transparent; color: #6b7770;">Logout</a></li>
+                    </ul>
+                </li>
+                <li th:if="${loggato} and ${isAdmin!=true}">
+                    <div style="position: relative;" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a type="button"><img
+                            src="https://cdn.icon-icons.com/icons2/494/PNG/512/cart_icon-icons.com_48341.png" class="iconlogin">
+                        </a>
+                        <b  th:if="${numCarrello}" th:text="${numCarrello}" style="position: absolute;
+                        top: 8px;
+                        right: 16px; color: black;"></b>
+                    </div>
+                    <ul class="dropdown-menu">
+                            <li><a href="/lista-carrello"
+                                    style="background-color: transparent; color: #6b7770;">Carrello</a></li>
+    
+                        </ul>
+                </li>
+        </nav>
+    </div>
+
+    <br><br>
+
+    <div class="carousel">
+        <!-- lista moto -->
+        <div class="list">
+            <div class="item">
+                <img src="https://images.ctfassets.net/x7j9qwvpvr5s/5m5o1m1peUUPiXNswdlCw9/2e1e894312e40db47d8cca9ba047631c/Panigale-V4-02-hero-1600x1000.jpg?fm=webp&q=90">
+                <div class="content">
+                    <div class="title">Panigale V4S</div>
+                    <div class="topic">Ducati</div>
+                    <div class="des">
+                        <!-- descrizione -->
+                        214 CV, 124 Nm, 174 kg
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="	https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/19ZX1000Y_201GY3ARB2CG_A.jpg">
+                <div class="content">
+                    <div class="title">H2R</div>
+                    <div class="topic">Kawasaki</div>
+                    <div class="des">
+                        <!-- descrizione -->
+                        310 CV, 165 Nm, 216 kg
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://s3-us-west-2.amazonaws.com/my-car-mexico/modelos/d5cd51a8/BMW-S-RR-1.webp">
+                <div class="content">
+                    <div class="title">S-1000-RR</div>
+                    <div class="topic">BMW</div>
+                    <div class="des" >
+                        <!-- descrizione -->
+                        <p style="text-shadow: black 0px 0px 10px; color: rgb(236, 233, 234); font-weight: 800;">207 CV, 113 Nm, 197 kg </p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn2.yamaha-motor.eu/prod/product-assets/2022/YZF1000R1/2022-Yamaha-YZF1000R1-EU-Icon_Blue-Action-005-03.jpg">
+                <div class="content">
+                    <div class="title">YZF-R1</div>
+                    <div class="topic">Yamaha </div>
+                    <div class="des">
+                        <!-- descrizione -->
+                        200 CV, 112 Nm, 200 kg
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- lista thumbnail -->
+        <div class="thumbnail">
+            <div class="item">
+                <img src="https://images.ctfassets.net/x7j9qwvpvr5s/5m5o1m1peUUPiXNswdlCw9/2e1e894312e40db47d8cca9ba047631c/Panigale-V4-02-hero-1600x1000.jpg?fm=webp&q=90">
+                <div class="content">
+                    <div class="title">
+                        Panigale-V4S
+                    </div>
+                    <div class="description">
+                        Ducati
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://storage.kawasaki.eu/public/kawasaki.eu/en-EU/model/19ZX1000Y_201GY3ARB2CG_A.jpg">
+                <div class="content">
+                    <div class="title">                        
+                        H2R
+                    </div>
+                    <div class="description">
+                        Kawasaki
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://s3-us-west-2.amazonaws.com/my-car-mexico/modelos/d5cd51a8/BMW-S-RR-1.webp">
+                <div class="content">
+                    <div class="title">
+                        S-1000-RR
+                    </div>
+                    <div class="description">
+                        BMW
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img src="https://cdn2.yamaha-motor.eu/prod/product-assets/2022/YZF1000R1/2022-Yamaha-YZF1000R1-EU-Icon_Blue-Action-005-03.jpg">
+                <div class="content">
+                    <div class="title">
+                        YZF-R1
+                    </div>
+                    <div class="description">
+                        Yamaha
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- next prev -->
+
+        <div class="arrows">
+            <button id="prev" style="font-weight: 900;"><<</button>
+            <button id="next" style="font-weight: 900;">>></button>
+        </div>
+        <!-- tempo -->
+        <div class="time"></div>
+    </div>
+
+
+    <div id="main">
+        <div id="card-section" >
+            <div class="flip-card" th:each= "moto, i : ${motori}">
+                <div class="flip-card-inner">
+
+                    <div class="flip-card-front" >
+                        <img class="img-card" th:if="${immagini[i.index]!=null}"  th:src="${immagini[i.index].url}" >
+                        <img th:if="${immagini[i.index]==null}" class="img-card"
+                            th:src="@{${'https://www.freeiconspng.com/thumbs/no-image-icon/no-image-icon-15.png'}}"></img>
+                    </div>
+
+                    <div class="flip-card-back">
+                        <p class="titlecard" th:text = "${moto.nomeMotore}"> a</p>
+
+                        <a class="subtitlecard" th:href="|/sportiveById?idMoto=${moto.id}|" style="color: rgba(255, 0, 0, 0.668); ">Scopri di più</a>
+
+                        <a
+                            th:onclick="@{'location.href=\'/addCarrello?tipoProdotto=moto&idProdotto='+${moto.id}+'\''}"
+                            th:if="${loggato} and ${isAdmin!=true}"> <img src="https://cdn-icons-png.flaticon.com/512/7183/7183228.png" class="iconlogin" style="cursor: pointer;">
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        
+        <section id="section">
+            <h2 class="major"><span>Linkedin</span></h2>
+            <ul class="contact">
+
+                <li style="position:relative;">
+                    <a class="icon brands ale" href="https://www.linkedin.com/in/arrlink/" target="_blank">
+                        <img style="position: absolute; top:-10px; right:-11px; width:69px; height:69px;" src="https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"/>
+                    </a>
+                    <span class="label"></span>
+                </li>
+                <li style="position: relative;">
+                    <a class="icon brands giaco" href="https://www.linkedin.com/in/giacomo-mazza33/" target="_blank">
+                        <img style="position: absolute; top:-10px; right:-11px; width:69px; height:69px;" src="https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"/>
+                    </a>
+                    <span class="label"></span>
+                </li>
+                <li style="position: relative;">
+                    <a class="icon brands gianlu" href="https://www.linkedin.com/in/gianluca-canova-developer/" target="_blank">
+                        <img style="position: absolute; top:-10px; right:-11px; width:69px; height:69px;" src="https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"/>
+                    </a>
+                    <span class="label"></span>
+                </li>
+                <li style="position: relative;">
+                    <a class="icon brands mic" href="https://www.linkedin.com/in/michele-bonafede/" target="_blank">
+                        <img style="position: absolute; top:-10px; right:-11px; width:69px; height:69px;" src="https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"/>
+                    </a>
+                    <span class="label"></span>
+                </li>
+
+            </ul>
+        </section>
+        <!-- Copyright -->
+        <div id="copyright">
+            <ul class="menu">
+                <li>&copy; Alessandro</li><li>&copy; Giacomo</li><li>&copy; Gianluca</li><li>&copy; Michele</li>
+            </ul>
+        </div>
+
+    </footer>
+
+
+    <script src="/js/carouselMoto.js"></script>
+</body>
+</html>

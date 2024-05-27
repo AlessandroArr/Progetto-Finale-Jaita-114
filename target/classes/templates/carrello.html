@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/carrello.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="js/carrello.js" defer></script>
+    <title>Carrello</title>
+   
+</head>
+
+<body style="padding-top: 0px;">
+    <header id="header" >
+        <div class="logo container">
+            <div>
+                <h1><a href="/home" id="logo">Motoroni</a></h1>
+                <p>i più belli di sempre</p>
+            </div>
+        </div>
+
+    </header>
+    <div class="container px-3 my-5 clearfix" style="background-color: #b1ddab71;; border-radius: 15px;">
+        <!-- Shopping cart table -->
+        <div class="card">
+            <div class="card-header">
+                <h2 style="margin-left: 38%; font-weight: 1000;">I TUOI ACQUISTI</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table table-bordered m-0">
+                    <thead id="thead">
+                      <tr>
+                        <!-- Set columns width -->
+                        <th class="text-center py-3 px-4" style="min-width: 400px;">PRODOTTI NEL CARRELLO</th>
+                    </thead>
+                    <tbody>
+                        <div th:each="j: ${#numbers.sequence(0, #lists.size(caschi)-1, 1)}" class="row-even">
+                            <tr>
+                                <td>
+                                    <h4 th:text="'Casco '+${caschi[j].nomeCasco}"></h4>
+                                    <h5 th:text="€ + '  ' + ${caschi[j].prezzo}"></h5>
+                                </td>
+                                <td class="text-center align-middle px-0">
+                                    <a th:href="@{'/rimuovi-carrello?id='+${caschi[j].id}}+'&tipo=casco'" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove"><b style="text-decoration: none;">X</b></a>
+                                </td>
+                            </tr>
+                        </div>
+                        <div th:each="j: ${#numbers.sequence(0, #lists.size(vestiti)-1, 1)}" class="row-odd">
+                            <tr>
+                                <td>
+                                    <h4 th:text="${vestiti[j].nomeAbbigliamento}"></h4>
+                                    <h5 th:text="€ + '  ' + ${vestiti[j].prezzo}"></h5>
+                                </td>
+                                <td class="text-center align-middle px-0">
+                                    <a th:href="@{'/rimuovi-carrello?id='+${vestiti[j].id}}+'&tipo=abbigliamento'" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a>
+                                </td>
+                            </tr>
+                        </div>
+                        <div th:each="j: ${#numbers.sequence(0, #lists.size(moto)-1, 1)}" class="row-even">
+                            <tr>
+                                <td>
+                                    <h4 th:text="${moto[j].nomeMotore}"></h4>
+                                    <h5 th:text="€ + '  ' + ${moto[j].prezzo}"></h5>
+                                </td>
+                                <td class="text-center align-middle px-0">
+                                    <a th:href="@{'/rimuovi-carrello?id='+${moto[j].id}}+'&tipo=moto'" class="shop-tooltip close float-none text-danger" title="" data-original-title="Remove">×</a>
+                                </td>
+                            </tr>
+                        </div>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- / Shopping cart table -->
+            
+                <div class="d-flex flex-wrap justify-content-between align-items-center pb-4" style="margin-left: 90%;">
+                  <div class="d-flex">
+                    <div class="text-center mt-4">
+                      <label class="text-muted m-0">Prezzo totale</label>
+                      <div class="text-large" ><strong th:text="${totale}+'€'"></strong></div>
+                    </div>
+                  </div>
+                </div>
+            
+                <div class="float-right">
+                    <button type="button" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3" onclick="location.href='/home'" id="hcarrello"><b style="color: white;">Torna alla home</b></button>
+                    
+                    <a href="/paymethod"><button type="button" id="buttonC" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3" th:if="${totale!=0}" ><b style="color: white; ">Procedi</b></button></a>
+                </div>
+            
+              </div>
+          </div>
+      </div>
+</body>
+</html>

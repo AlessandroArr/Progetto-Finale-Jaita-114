@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <link rel="stylesheet" href="css/cartaDicredito.css">
+    
+    <script> document.addEventListener('DOMContentLoaded', function() {
+        const paymentMethodSelect = document.getElementById('payment-method');
+        const creditCardInfo = document.getElementById('credit-card-info');
+
+        paymentMethodSelect.addEventListener('change', function() {
+            if (this.value === 'creditcard') {
+                creditCardInfo.hidden = false;
+            } else {
+                creditCardInfo.hidden = true;
+            }
+        });
+        });</script>
+</head>
+<body>
+    <div class="container">
+        <h1>Pagamento</h1>
+        <form id="payment-form" action="#">
+            <div class="form-group">
+            
+                <select id="payment-method" name="payment-method" required>
+                    <option value="" disabled selected>Seleziona un metodo</option>
+                    <option value="creditcard">Carta di Credito</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="banktransfer">Google Pay</option>
+                </select>
+            </div>
+            <div id="credit-card-info" class="credit-card-info" hidden>
+                <div class="form-group">
+                    <label for="card-number">Numero della Carta</label>
+                    <input type="text" id="card-number" name="card-number" pattern="\d{16}" maxlength="16" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-expiry" id="data">Data di Scadenza</label>
+                    <input type="text" id="card-expiry" name="card-expiry" maxlength="7" placeholder="MM/YY" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-cvc" id="CVC">CVC</label>
+                    <input type="text" id="card-cvc" name="card-cvc" pattern="\d{3}" maxlength="3" required>
+                </div>
+            </div>
+
+            <a href="/acquistoeffettuato" class="button-link" type="submit">Paga Ora</a>
+
+        </form>
+    </div>
+</body>
+</html>

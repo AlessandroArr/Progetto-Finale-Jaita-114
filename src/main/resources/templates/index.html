@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Motoroni by Gruppo 2</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/css/main.css" type="text/css" />
+
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+	</head>
+	<body class="homepage">
+
+
+
+		
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header">
+					<div class="logo container">
+						<div>
+							<h1><a href="/home" id="logo">Motoroni</a></h1>
+							<p>i più belli di sempre</p>
+						</div>
+					</div>
+				</header>
+
+				
+			<!-- Nav -->
+				<nav id="nav">
+					
+					<ul style="display: flex; align-items: center; justify-content: center; top: -2px;">
+						<li class="current"><a href="/home">Home</a></li>
+						
+						<li>
+							<a type="button" data-bs-toggle="dropdown" aria-expanded="false" >Motoroni</a>
+							<ul class="dropdown-menu">
+								<li><a href="/sportive" style="background-color: transparent; color: #6b7770;">Sportive</a></li>
+							</ul>
+						</li>
+
+						<li>
+							<a href="/caschi">Caschi</a>
+						</li>
+
+						<li>
+							<a href="/abbigliamento">Abbigliamento</a>
+						</li>
+
+						<li>
+							<a type="button" data-bs-toggle="dropdown" aria-expanded="false" ><img src="https://cdn-icons-png.flaticon.com/512/5029/5029739.png" class="iconlogin"></a>
+							<ul class="dropdown-menu">
+								<li th:unless="${loggato}"><a href="/login" style="background-color: transparent; color: #6b7770;">Login</a></li>
+								<li th:unless="${loggato}"><a href="/formRegistrazione" style="background-color: transparent; color: #6b7770;">Registrazione</a></li>
+								<li th:if="${isAdmin}"><a href="/admin" style="background-color: transparent; color: #6b7770;">Admin-Page</a></li>
+								<li th:if="${loggato}"><a href="/logout" style="background-color: transparent; color: #6b7770;">Logout</a></li>
+							</ul>
+
+							<li th:if="${loggato} and ${isAdmin!=true}">
+								<div style="position: relative;" data-bs-toggle="dropdown" aria-expanded="false">
+									<a type="button"><img
+										src="https://cdn.icon-icons.com/icons2/494/PNG/512/cart_icon-icons.com_48341.png" class="iconlogin">
+									</a>
+									<b  th:if="${numCarrello}" th:text="${numCarrello}" style="position: absolute;
+									top: 8px;
+									right: 16px; color: black;"></b>
+								</div>
+								<ul class="dropdown-menu">
+										<li><a href="/lista-carrello"
+												style="background-color: transparent; color: #6b7770;">Carrello</a></li>
+				
+									</ul>
+						</li>
+					</ul>
+				</nav>
+
+				
+
+			<!-- Banner -->
+				<section id="banner">
+					<div class="content">
+						<h2>Benvenuto su motoroni</h2>
+						<p>Perchè andare in moto è più cool</p>
+						<a href="#main" class="button scrolly" style="animation-duration: 30;">Go</a>
+					</div>
+				</section>
+
+			<!-- Main -->
+				<section id="main">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12">
+
+								<!-- Highlight -->
+									<section class="box highlight" >
+										
+										<header>
+											<h2>VIENI A SCOPRIRE LA NOSTRA SELEZIONE DI MOTO</h2>
+											<p>clicca sull'icona e scopri il nostro catalogo</p>
+										</header>
+										<p style="font-style: italic; text-align: center;">
+											Le nostre moto rappresentano le migliori novità del mercato, il frutto di una selezione accurata. <br>
+											Vogliamo trasmettere il nostro impegno nella costante ricerca di prodotti <br>di qualità ed innovativi  in campo 
+											ingegneristico. <br> 
+											Cosa aspetti?  Scendi in pista!
+										</p>
+										<ul class="special">
+											<li><a href="/sportive" > <img src="https://cdn-icons-png.flaticon.com/512/1768/1768201.png"  class="icon" style="height: 135px;"> </a><p style="font-weight: 900; font-style: inherit;">VIA!</p></li>
+										</ul>
+									</section>
+
+							</div>
+							<div class="col-12">
+
+								<!-- Features -->
+									<section class="box features">
+										<h2 class="major"><span>Le migliori offerte</span></h2>
+										<div>
+											<div class="row">
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="/sportiveById?idMoto=1" class="image featured" ><img src="https://4kwallpapers.com/images/wallpapers/ducati-panigale-v4-r-sports-bikes-race-track-2023-5k-8k-2560x2560-8868.jpg"></a>
+															<h3><a href="/sportiveById?idMoto=1">La novità del momento</a></h3>	
+															<p style="font-style: italic;">
+																Il TOP di gamma a portata di click.
+															</p>
+														</section>
+
+												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="/caschi" class="image featured" st><img src="https://cdn.motoabbigliamento.it/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/c/a/casco_integrale_ls2_ff805_thunder_c_volt_in_carbonio_nero_lucido_grigio.jpg"></a>
+															<h3><a href="/caschi">Il nostro casco selezionato per te</a></h3>
+															<p style="font-style: italic;">
+																La tua sicurezza è la nostra priorità.
+															</p>
+														</section>
+
+												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a href="/abbigliamento" class="image featured"><img src="https://shop.ducati.com/media/catalog/product/cache/d737c4e9011f92407994a498031f753a/f/8/f8b0b020f0775dee79c831048e0689bf_9.jpg" /></a>
+															<h3><a href="/abbigliamento">La miglior giacca</a></h3>
+															<p style="font-style: italic;">
+																Be cool, be safe.	
+															</p>
+														</section>
+
+												</div>
+												<div class="col-3 col-6-medium col-12-small">
+
+													<!-- Feature -->
+														<section class="box feature">
+															<a  class="image featured"><img src="https://i.ibb.co/FBvkKvt/logo.png" alt="" /></a>
+				
+														</section>
+
+												</div>
+												<div class="col-12">
+													<ul class="actions">
+														<li><a href="/caschi" class="button large">Caschi</a></li>
+														<li><a href="/abbigliamento" class="button alt large">Abbigliamento	</a></li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+							<div class="col-12">
+
+								<!-- Blog -->
+									<section class="box blog">
+										<h2 class="major"><span>Un ringraziamento a Generation</span></h2>
+										<div>
+											<div class="row">
+												<div class="col-9 col-12-medium">
+													<div class="content">
+
+														<!-- Featured Post -->
+															<article class="box post">
+																<header>
+																	<h3><a href="#">La classe dei campioni</a></h3>
+																	<p>Che di meglio non c'è</p>
+																	<ul class="meta">
+																		<li class="icon fa-clock">480h</li>
+																		<li class="icon fa-comments"><a href="#">24 developers</a></li>
+																	</ul>
+																</header>
+																<a href="#" class="image featured"><img src="image/blob (1).jpg" alt="" /></a>
+																<p>
+																	Le cose migliori si fanno in compagnia, e noi siamo la compagnia migliore
+																</p>
+																<a href="#" class="button">highlight del corso</a>
+															</article>
+
+													</div>
+												</div>
+												<div class="col-3 col-12-medium" style="display: flex; align-items: center;">
+													<div class="sidebar">
+
+														<!-- Archives -->
+															<ul class="divided">
+																<li>
+																	<article class="box post-summary">
+																		<h3><a href="https://it.mashable.com/cultura/3540/da-barcellona-a-milano-a-piedi-limpresa-di-diego-rimasto-bloccato-in-spagna-causa-lockdown">La Diegalda</a></h3>
+																		<ul class="meta">
+																			
+																		</ul>
+																	</article>
+																</li>
+																<li>
+																	<article class="box post-summary">
+																		<h3><a href="/image/ezgif.com-animated-gif-maker.mp4">Come si fa uno sfondo</a></h3>
+																		<ul class="meta">
+																			
+																			
+																		</ul>
+																	</article>
+																</li>
+																<li>
+																	<article class="box post-summary">
+																		<h3><a href="https://www.scrumstudy.com/certification/scrum-fundamentals-certified">Scrum e agile</a></h3>
+																		<ul class="meta">
+						
+																			
+																		</ul>
+																	</article>
+																</li>
+																<li>
+																	<article class="box post-summary">
+																		<h3><a href="#">I migliori coach</a></h3>
+																		<p><a style="color: #c1cac5" href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAADpdCUgBO9hw2LwIPEcKTUuUwZsbE1CHvP8&keywords=anna%20tran%20minh&origin=RICH_QUERY_SUGGESTION&position=0&searchId=58cf4f59-14e0-4499-9f54-f538afe39ff6&sid=%2Cc3&spellCorrectionEnabled=false" >Anna</a></p>
+																		<p><a style="color: #c1cac5" href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAAETVy4wBOCG8plcvgvWQ3MddoNB_dDDxwOE&keywords=diego%20maria%20de%20nicola&origin=RICH_QUERY_SUGGESTION&position=0&searchId=e014d038-63a6-4d99-b857-045691a0b611&sid=0p8&spellCorrectionEnabled=false">Diego</a></p>
+																		<p><a style="color: #c1cac5" href="https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAACSI8UwBT_bawNjVGWft2HRM8Jg1s2pJ0kA&keywords=rossella%20riemma&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=c2046a29-a6e6-4dd9-87a0-26d332f196d1&sid=4GL&spellCorrectionEnabled=true">Rossella</a></p>
+													
+																	</article>
+																</li>
+															</ul>
+
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+			<!-- Footer -->
+				<footer id="footer">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-12">
+
+								<!-- About -->
+									<section>
+										<h2 class="major"><span>Cosa rappresentiamo</span></h2>
+										<p>
+											Questo è il <strong>Sito di moto</strong> più forte di tutti,
+											Per un progetto di 
+											<a href="https://italy.generation.org/?gad_source=1&gclid=Cj0KCQjwgJyyBhCGARIsAK8LVLP_oJRSQdTtGCMq8BAxfg15caU0TmStwkXlg9rsK22iYs9tkhS3IYYaAmPsEALw_wcB">
+												Generation Italy</a>.
+											rilasciato per scopi didattici.
+										</p>
+									</section>
+
+							</div>
+							<div class="col-12">
+
+								<!-- Contact -->
+									<section>
+										<h2 class="major"><span>Linkedin </span></h2>
+										<ul class="contact">
+											
+											<li style="position:relative;">
+												<a class="icon brands ale" href="https://www.linkedin.com/in/arrlink/" target="_blank">
+													<img style="position: absolute; top:-10px; right:-11px; width:69px; height:69px;" src="https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"/>
+												</a>
+												<span class="label"></span>
+											</li>
+											<li style="position: relative;">
+												<a class="icon brands giaco" href="https://www.linkedin.com/in/giacomo-mazza33/" target="_blank">
+													<img style="position: absolute; top:-10px; right:-11px; width:69px; height:69px;" src="https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"/>
+												</a>
+												<span class="label"></span>
+											</li>
+											<li style="position: relative;">
+												<a class="icon brands gianlu" href="https://www.linkedin.com/in/gianluca-canova-developer/" target="_blank">
+													<img style="position: absolute; top:-10px; right:-11px; width:69px; height:69px;" src="https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"/>
+												</a>
+												<span class="label"></span>
+											</li>
+											<li style="position: relative;">
+												<a class="icon brands mic" href="https://www.linkedin.com/in/michele-bonafede/" target="_blank">
+													<img style="position: absolute; top:-10px; right:-11px; width:69px; height:69px;" src="https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"/>
+												</a>
+												<span class="label"></span>
+											</li>
+										</ul>
+									</section>
+
+							</div>
+						</div>
+
+						<!-- Copyright -->
+							<div id="copyright">
+								<ul class="menu">
+									<li>&copy; Alessandro</li><li>&copy; Giacomo</li><li>&copy; Gianluca</li><li>&copy; Michele</li>
+								</ul>
+							</div>
+
+					</div>
+				</footer>
+
+		</div>
+	</body>
+
+
+</html>

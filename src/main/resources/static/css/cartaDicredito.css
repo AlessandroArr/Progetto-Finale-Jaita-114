@@ -1,0 +1,92 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   
+}
+
+h1 {
+    text-align: center;
+    color: #000000; /* Verde sbiadito */
+    text-emphasis: bold;
+    text-shadow: #333 1px 1px 1px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+select {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 10%;
+    
+}
+input{
+    width: 30%;
+    padding: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 33%;
+}
+
+input:focus, select:focus {
+    border-color: #4CAF50; /* Verde sbiadito */
+    outline: none;
+}
+
+.credit-card-info {
+    margin-top: 15px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color:#3c8732; 
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-left: 41%;
+}
+
+#button-link:hover{
+    background-color: #5e9357;
+
+  }
+
+label {
+    margin-left: 38%;
+}
+#data{
+    margin-left: 40%;
+}
+#CVC{
+    margin-left: 47%;
+}
+a    {
+    text-decoration: none;
+}

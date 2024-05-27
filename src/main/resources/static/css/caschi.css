@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic|Open+Sans+Condensed:700");
+
+.tilt {
+    box-shadow: 0 20px 30px -13px rgba(0, 0, 0, 0.7);
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+    -webkit-transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+            transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1);
+  }
+
+  .bg-two {
+    background: linear-gradient(45deg, #ffffff, #5e6d636d);
+  }
+
+  .bg-one {
+    background: linear-gradient(45deg, #ff194b, #8215f0);
+  }
+
+  .img-prodotto{
+    height: 200px;
+    width: 200px;
+    object-fit:contain;
+  }
+  
+  #barra-ricerca{
+    width: 1200px;
+    max-width: calc(100% - 120px);
+    height: 50px;
+    font-size: 18px;
+    margin-right: 30px;
+    background-color: white;
+    border-color: #007bff;
+    color: black;
+  }
+  
+  #bottone-ricerca{
+    width: 90px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+
+
+  .btn-myblue{color: white; border-color: hsl(126, 42%, 30%);}
+  .btn-myblue:hover{background-color:#b1ddab; color: white;}
+
+  .immagine-sfondo{
+    min-height: 80vh;
+    background-image: url(https://superbikeitalia.it/wp-content/uploads/2021/12/triumph-speed-triple-1200-rs-imola-piega-dx.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #000;
+    max-width: 100%;
+  }
+
+  #img-fill-prodotto:hover {
+    transform: rotateY(150deg);
+  }
+
+  
+
+  /*.form-group{
+  
+  .tilt {
+      box-shadow: 0 20px 30px -13px rgba(0, 0, 0, 0.7);
+  }*/
+
+.form-control-range{
+  height: 2px;
+}
+
+.display-range, .display-range:hover, .display-range:active, .display-range:focus {
+    background: transparent;
+    color: #6b7770;
+   width: 60px;
+  outline: none;
+  border: none;
+  
+}
+
+#barra-ricerca{
+  width: 1200px;
+  max-width: calc(100% - 120px);
+  height: 50px;
+  font-size: 18px;
+  margin-right: 30px;
+  background-color: white;
+  border-color: #007bff;
+  color: black;
+}
+
+#bottone-ricerca{
+  width: 90px;
+  height: 50px;
+  font-size: 18px;
+}
+
+.form-inline{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#filtra-button, 
+#filtra-button:hover,
+#filtra-button:active {
+    background: #c1edbb;
+    color: #6b7770;
+}
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.col-3{
+  background: rgb(255,255,255);
+background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 16%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,1) 100%);
+}
+
+.messaggio-parent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* or any specific height */
+}
