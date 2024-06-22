@@ -4,6 +4,7 @@
 
 ![2024-06-22 (8)](https://github.com/AlessandroArr/Progetto-Finale-Jaita-114/assets/167428629/62a07da6-34cb-41ea-81d1-c6138add2d16)
 
-![2024-06-22 (10)](https://github.com/AlessandroArr/Progetto-Finale-Jaita-114/assets/167428629/4591ab37-bbb1-471d-9a6f-7cd38eb635c3)
 
+
+![2024-06-22 (12)](https://github.com/AlessandroArr/Progetto-Finale-Jaita-114/assets/167428629/fe831065-d869-495f-9abb-e2ea3681981b)
 
